@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {
   createMemoryHistory,
-  createBrowserHistory,
+  createHashHistory,
   History,
   LocationListener,
 } from "history";
@@ -48,7 +48,7 @@ if (process.env.NODE_ENV === "development") {
   const devRoot = document.querySelector("#_transactions-development-root");
 
   if (devRoot) {
-    mount(devRoot, { defaultHistory: createBrowserHistory() });
+    mount(devRoot, { defaultHistory: createHashHistory() });
   }
 }
 
