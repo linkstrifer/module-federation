@@ -5,7 +5,7 @@ const ModuleFederationPlugin =
 const commonConfig = require("./webpack.common");
 const packageJson = require("../package.json");
 
-const port = 8002;
+const { name, port } = packageJson;
 
 const devConfig = {
   mode: "development",
@@ -20,7 +20,7 @@ const devConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "customer",
+      name,
       filename: "remoteEntry.js",
       exposes: {
         "./app": "./src/bootstrap",

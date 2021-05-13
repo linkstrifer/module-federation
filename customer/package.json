@@ -1,5 +1,6 @@
 {
   "name": "customer",
+  "port": 8002,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

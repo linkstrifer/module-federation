@@ -3,6 +3,8 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const packageJson = require("../package.json");
 const commonConfig = require("./webpack.common");
 
+const { name } = packageJson;
+
 const prodConfig = {
   mode: "production",
   output: {
@@ -11,7 +13,7 @@ const prodConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "customer",
+      name,
       filename: "remoteEntry.js",
       exposes: {
         "./app": "./src/bootstrap",

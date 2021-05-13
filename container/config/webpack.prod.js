@@ -5,6 +5,8 @@ const packageJson = require("../package.json");
 
 const domain = process.env.PRODUCTION_DOMAIN;
 
+const { name } = packageJson;
+
 const prodConfig = {
   mode: "production",
   output: {
@@ -13,7 +15,7 @@ const prodConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "container",
+      name,
       remotes: {
         customer: `customer@${domain}/customer/latest/remoteEntry.js`,
         transactions: `transactions${domain}/transactions/latest/remoteEntry.js`,
