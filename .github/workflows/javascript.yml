@@ -1,0 +1,27 @@
+name: deploy-javascript
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - javascript/**
+
+defaults:
+  run:
+    working-directory: javascript
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm i
+      - run: npm run build
+
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          destination_dir: ../docs/javascript
