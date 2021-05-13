@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createMemoryHistory, createBrowserHistory } from "history";
 
+import App from "./App";
+
 const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
   const history =
     defaultHistory ||
@@ -13,7 +15,7 @@ const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
     history.listen(onNavigate);
   }
 
-  ReactDOM.render(<div>Customer Route</div>, el);
+  ReactDOM.render(<App history={history} />, el);
 
   return {
     onParentNavigate({ pathname: nextPathname }) {
