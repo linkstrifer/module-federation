@@ -21,8 +21,8 @@ const devConfig = {
     new ModuleFederationPlugin({
       name,
       remotes: {
-        customer: "customer@http://localhost:8002/remoteEntry.js",
-        transactions: "transactions@http://localhost:8003/remoteEntry.js",
+        javascript: "javascript@http://localhost:8002/remoteEntry.js",
+        typescript: "typescript@http://localhost:8003/remoteEntry.js",
       },
       shared: packageJson.dependencies,
     }),

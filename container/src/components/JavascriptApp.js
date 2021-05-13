@@ -1,8 +1,6 @@
-import a, { mount } from "customer/app";
+import a, { mount } from "javascript/app";
 import React, { useRef, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-
-console.log({ a, mount });
 
 export default () => {
   const ref = useRef(null);

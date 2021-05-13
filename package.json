@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently --kill-others \"npm run start:container\" \"npm run start:customer\" \"npm run start:transactions\"",
+    "start": "concurrently --kill-others \"npm run start:container\" \"npm run start:javascript\" \"npm run start:typescript\"",
     "start:container": "cd container && npm start",
-    "start:customer": "cd customer && npm start",
-    "start:transactions": "cd transactions && npm start"
+    "start:javascript": "cd javascript && npm start",
+    "start:typescript": "cd typescript && npm start"
   },
   "keywords": [],
   "author": "",

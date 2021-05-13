@@ -1,4 +1,4 @@
-import loadApp from "transactions/app";
+import loadApp from "typescript/app";
 import React, { useRef, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
