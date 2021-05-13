@@ -17,16 +17,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: "14.x"
+
       - run: npm i
       - run: npm run build
 
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Move files
-        run: cd ..
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          destination_dir: ../docs/javascript
+          destination_dir: ./docs/javascript
