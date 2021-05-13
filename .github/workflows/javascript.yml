@@ -7,11 +7,13 @@ on:
     paths:
       - javascript/**
 
+defaults:
+  run:
+    working-directory: javascript
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      working-directory: javascript
 
     steps:
       - uses: actions/checkout@v2
@@ -22,6 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Move files
+        run: cd ..
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
