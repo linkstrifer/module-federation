@@ -53,7 +53,3 @@ if (process.env.NODE_ENV === "development") {
 }
 
 export { mount };
-export default () => {
-  console.log("a");
-  return mount;
-};
