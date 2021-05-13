@@ -1,5 +1,8 @@
 module.exports = {
   entry: "./src/index",
+  output: {
+    publicPath: "auto",
+  },
   module: {
     rules: [
       {

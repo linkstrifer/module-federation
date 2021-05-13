@@ -1,7 +1,8 @@
 const path = require("path");
 const { merge } = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const ModuleFederationPlugin =
+  require("webpack").container.ModuleFederationPlugin;
 const commonConfig = require("./webpack.common");
 const packageJson = require("../package.json");
 
@@ -13,7 +14,6 @@ const devConfig = {
     publicPath: `http://localhost:${port}/`,
   },
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
     port,
     historyApiFallback: {
       index: "index.html",
