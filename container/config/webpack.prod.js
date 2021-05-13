@@ -18,7 +18,7 @@ const prodConfig = {
       name,
       remotes: {
         javascript: `javascript@${domain}/javascript/remoteEntry.js`,
-        typescript: `typescript${domain}/typescript/remoteEntry.js`,
+        typescript: `typescript@${domain}/typescript/remoteEntry.js`,
       },
       shared: packageJson.dependencies,
     }),
