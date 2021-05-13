@@ -3,7 +3,7 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const commonConfig = require("./webpack.common");
 const packageJson = require("../package.json");
 
-const domain = process.env.PRODUCTION_DOMAIN;
+const domain = "http://strifer.link/module-federation";
 
 const { name } = packageJson;
 
@@ -11,14 +11,14 @@ const prodConfig = {
   mode: "production",
   output: {
     filename: "[name].[contenthash].js",
-    publicPath: "/container/latest/",
+    publicPath: "/container/",
   },
   plugins: [
     new ModuleFederationPlugin({
       name,
       remotes: {
-        javascript: `javascript@${domain}/javascript/latest/remoteEntry.js`,
-        typescript: `typescript${domain}/typescript/latest/remoteEntry.js`,
+        javascript: `javascript@${domain}/javascript/remoteEntry.js`,
+        typescript: `typescript${domain}/typescript/remoteEntry.js`,
       },
       shared: packageJson.dependencies,
     }),
