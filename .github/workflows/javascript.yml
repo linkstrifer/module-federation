@@ -7,19 +7,20 @@ on:
     paths:
       - javascript/**
 
-defaults:
-  run:
-    working-directory: javascript
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      working-directory: javascript
 
     steps:
       - uses: actions/checkout@v2
       - run: npm i
       - run: npm run build
 
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
       - name: Move files
         uses: peaceiris/actions-gh-pages@v3
         with:
