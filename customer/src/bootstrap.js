@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createMemoryHistory, createBrowserHistory } from "history";
+import { createMemoryHistory, createHashHistory } from "history";
 
 import App from "./App";
 
@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === "development") {
   const devRoot = document.querySelector("#_consumer-development-root");
 
   if (devRoot) {
-    mount(devRoot, { defaultHistory: createBrowserHistory() });
+    mount(devRoot, { defaultHistory: createHashHistory() });
   }
 }
 
